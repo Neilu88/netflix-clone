@@ -7,7 +7,7 @@ import InfiniteScroll from 'react-infinite-scroll-component'
 
 interface Props {
   title: string
-  movies: Movie[] | DocumentData[]
+  movies: Movie[]
 }
 
 const Row = ({ title, movies }: Props) => {
