@@ -11,7 +11,7 @@ interface Props {
   netflixOriginals: Movie[]
 }
 
-const Banner = ({ netflixOriginals }: Props) => {
+const HeroBanner = ({ netflixOriginals }: Props) => {
   const [movie, setMovie] = useState<Movie | null>(null)
 
   const [showModal, setShowModal] = useRecoilState(modalState)
@@ -31,6 +31,7 @@ const Banner = ({ netflixOriginals }: Props) => {
           layout="fill"
           objectFit="cover"
           src={`${baseUrl}${movie?.backdrop_path || movie?.poster_path}`}
+          alt={movie?.title || movie?.name || 'Movie banner'}
         />
       </div>
       <h1 className="select-none text-2xl lg:text-7xl md:text-4xl">
@@ -57,4 +58,4 @@ const Banner = ({ netflixOriginals }: Props) => {
     </div>
   )
 }
-export default Banner
+export default HeroBanner
